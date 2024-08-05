@@ -1,19 +1,33 @@
 import { Link } from "react-router-dom";
+import { StyledInput, StyledLogin } from "../styles/styles";
 
 const Login = () => {
   return (
     <>
-      <form>
-        <label>Email</label>
-        <input type="email" />
+      <StyledLogin>
+        <form>
+          <h1>Seja bem vindo</h1>
 
-        <label>Senha</label>
-        <input type="password" />
-
-        <button type="submit">Entrar</button>
-      </form>
-
-      <Link to="/register">Cadastro</Link>
+          <div>
+            <StyledInput type="email" placeholder="Seu Email" />
+          </div>
+          <div>
+            <StyledInput type="password" placeholder="Sua Senha" />
+          </div>
+          <div>
+            <button type="submit">Entrar</button>
+          </div>
+          <div>
+            <span>
+              Não tem uma conta? Faça seu
+              <Link to="/register">CADASTRO</Link>
+            </span>
+          </div>
+          <div>
+            <Link to="/home">Ver Dashboard</Link>
+          </div>
+        </form>
+      </StyledLogin>
     </>
   );
 };
